@@ -1,50 +1,10 @@
-// Variáveis
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$text-color: #fff;
-$border-radius: 8px;
+@use '_colors' as *;
 
-// Mixin para botões
-@mixin button-style($bg-color) {
-    background: $bg-color;
-    color: $text-color;
-    padding: 10px 20px;
-    border: none;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-// Estilos gerais
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f4f4f4;
-    margin: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
-// Estilização do card
-.card {
-    background: $primary-color;
-    color: $text-color;
-    padding: 20px;
-    border-radius: $border-radius;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-
-    h2 {
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .btn {
-        @include button-style($secondary-color);
-        margin-top: 15px;
-    }
+h1 {
+  color: $accent-color;
 }
