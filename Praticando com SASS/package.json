@@ -1,0 +1,15 @@
+{
+  "name": "praticando-com-sass",
+  "version": "1.0.0",
+  "description": "",
+"scripts": {
+  "sass:g": "node_modules/sass/sass.js",
+  "sass": "sass src/styles/style.scss dist/style.css",
+  "sass:watch": "sass --watch src/styles/style.scss:dist/style.css"
+},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.83.4"
+  }
+}
