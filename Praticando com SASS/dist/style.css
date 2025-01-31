@@ -1,10 +1,32 @@
-body {
-  background-color: #3498db;
-  color: #2ecc71;
+section {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 h1 {
-  color: #e74c3c;
+  color: yellow;
+  font-family: monospace;
+  margin-bottom: 60px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.4;
+  max-width: 400px;
+  font-family: monospace;
+}
+
+a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: yellow;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
 /*# sourceMappingURL=style.css.map */
