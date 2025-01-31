@@ -1,32 +1,107 @@
+@charset "UTF-8";
 section {
   max-width: 600px;
   margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
-h1 {
-  color: yellow;
+.modal h1 {
+  color: blue;
   font-family: monospace;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1;
+  background-color: rgb(118, 146, 247);
+  color: #fff;
+  font-size: 100px;
 }
-
-p {
+.modal h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: blue;
+}
+.modal p {
   font-size: 1.2em;
+  font-family: monospace;
+  font-style: italic;
   line-height: 1.4;
   max-width: 400px;
-  font-family: monospace;
 }
-
-a {
+.modal a {
   display: block;
   max-width: 120px;
   padding: 10px;
   border-radius: 4px;
   text-align: center;
-  background: yellow;
+  background: blue;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-family: monospace;
+}
+
+ul {
+  text-align: center;
+}
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+}
+ul li a:hover {
+  background-color: pink;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.teste {
+  background: yellow;
+}
+
+.teste a {
+  display: flex;
+  color: black;
+  border-bottom: 2px solid white;
+}
+
+.teste li {
+  list-style: none;
+  border-bottom: 2px solid white;
+  margin-left: 20px;
+}
+
+a {
+  display: flex;
+  gap: 3px;
+}
+
+.teste a::before {
+  content: "•";
+}
+
+.teste a:hover {
+  background-color: pink;
+  color: black;
+  border-bottom: 2px solid white;
+}
+
+li:hover {
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

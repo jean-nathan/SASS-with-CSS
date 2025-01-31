@@ -1,34 +1,144 @@
-$cor-primaria: yellow;
+@mixin color-template {
+	background-color: rgb(118, 146, 247);
+	color: #fff;
+}
+
+@mixin title-large {
+	font-size: 4em;
+	font-weight: bold;
+	font-family: monospace;
+	line-height: 1;
+	@include color-template;
+}
+
+
+@mixin sizeFont($fontDefault: 100px) {
+	font-size: $fontDefault;
+}
+
+
+@mixin separador($color) {
+	&::after {
+		content: '';
+		display: block;
+		width: 100px;
+		height: 4px;
+		background-color: $color;
+	}
+}
+
+
+@mixin border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+$cor-primaria: blue;
 $font-primaria: monospace;
-$gutter: 60px;
+$gutter: 10px;
+$fontDefault: 100px;
 
 section {
-	max-width: 600px;
-	margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
+	@include border-box
 }
 
-h1 {
-	color: $cor-primaria;
-	font-family: $font-primaria;
-	margin-bottom: $gutter;
+.modal {
+  h1 {
+    color: $cor-primaria;
+    font-family: $font-primaria;
+    margin-bottom: $gutter;
+		@include title-large;
+		@include separador($cor-primaria);
+		@include sizeFont()
+  }
+
+  p {
+    font-size: 1.2em;
+    font-family: $font-primaria;
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 400px;
+  }
+
+  a {
+    display: block;
+    max-width: 120px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background: $cor-primaria;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-primaria;
+  }
 }
 
-p {
-	font-size: 1.2em;
-	line-height: 1.4;
-	max-width: 400px;
-	font-family: $font-primaria;
+ul {
+  text-align: center;
+  li {
+    display: inline-block;
+    list-style: none;
+
+    a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      background-color: blue;
+      color: white;
+      &:hover {
+        background-color: pink;
+      }
+    }
+  }
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.teste {
+	//  display: wrap;
+	// align-items: end;
+	// height: 200px;
+	background: yellow;
+	// gap: 10px;
+}
+
+.teste a {
+	display: flex;
+	color: black;
+	border-bottom: 2px solid white;
+}
+
+.teste li {
+	list-style: none;
+	border-bottom: 2px solid white;;
+	margin-left: 20px;
 }
 
 a {
-	display: block;
-	max-width: 120px;
-	padding: 10px;
-	border-radius: 4px;
-	text-align: center;
-	background: $cor-primaria;
-	color: white;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family: $font-primaria;
+ display: flex;
+ gap: 3px;
+}
+
+
+.teste a::before {
+	content: "•";
+}
+
+.teste a:hover {
+	background-color: pink;
+	color: black;
+	border-bottom: 2px solid white;
+}
+
+ li {
+	&:hover {
+		background-color: red;
+	}
 }
