@@ -62,18 +62,18 @@ section {
     20px 20px 0 0 rgba(0, 0, 0, 0.5)
   );
 
-  h1 {
-    color: $cor-primaria;
-    font-family: $font-primaria;
-    margin-bottom: $gutter;
-    @include title-large;
-    @include separador($cor-primaria);
-    @include sizeFont();
-    @include mobile {
-      color: pink;
-      font-size: 2rem;
-    }
-  }
+  // h1 {
+  //   color: $cor-primaria;
+  //   font-family: $font-primaria;
+  //   margin-bottom: $gutter;
+  //   @include title-large;
+  //   @include separador($cor-primaria);
+  //   @include sizeFont();
+  //   @include mobile {
+  //     color: pink;
+  //     font-size: 2rem;
+  //   }
+  // }
 
   p {
     font-size: 1.2em;
