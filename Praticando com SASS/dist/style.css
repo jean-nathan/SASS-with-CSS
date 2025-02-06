@@ -1,17 +1,100 @@
-/* Error: Undefined operation "#333 + #777".
- *    ,
- * 81 |     background-color: #333 + #777;
- *    |                       ^^^^^^^^^^^
- *    '
- *   src/styles/style.scss 81:23  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: Undefined operation "#333 + #777".\a    \2577 \a 81 \2502      background-color: #333 + #777;\a    \2502                        ^^^^^^^^^^^\a    \2575 \a   src/styles/style.scss 81:23  root stylesheet';
+@charset "UTF-8";
+p {
+  color: yellow;
+  background: purple;
+  font-size: 1rem;
 }
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.modal {
+  box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+}
+.modal p {
+  font-size: -128px;
+  width: 127px;
+  font-family: monospace;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 400px;
+}
+.modal a {
+  padding: 20px;
+  display: block;
+  max-width: 120px;
+  border-radius: 4px;
+  text-align: center;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+ul {
+  text-align: center;
+}
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+}
+ul li a:hover {
+  background-color: pink;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.teste {
+  background: yellow;
+}
+
+.teste a {
+  display: flex;
+  color: black;
+  border-bottom: 2px solid white;
+}
+
+.teste li {
+  list-style: none;
+  border-bottom: 2px solid white;
+  margin-left: 20px;
+}
+
+a {
+  display: flex;
+  gap: 3px;
+}
+
+.teste a::before {
+  content: "•";
+}
+
+.teste a:hover {
+  background-color: pink;
+  color: black;
+  border-bottom: 2px solid white;
+}
+
+li:hover {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

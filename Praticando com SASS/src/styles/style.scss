@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:map";
+
 @mixin color-template {
   background-color: rgb(118, 146, 247);
   color: #fff;
@@ -43,11 +46,60 @@
   }
 }
 
-
 $cor-primaria: blue;
 $font-primaria: monospace;
 $gutter: 10px;
 $fontDefault: 100px;
+
+$theme: desert;
+$primary-color: black;
+$secundary-color: gray;
+
+@if $theme == ocean {
+  $primary-color: blue;
+  $secundary-color: orange;
+} @else if $theme == desert {
+  $primary-color: yellow;
+  $secundary-color: purple;
+}
+
+@mixin type-primary($size) {
+  $sizes: (
+    16: 1rem,
+    32: 2rem,
+    48: 3rem,
+  );
+
+  $size-value: map.get($sizes, $size);
+  @if $size-value {
+    font-size: $size-value;
+  } @else {
+    @warn "⚠️ Atenção: O valor de size: '#{$size}' não é aceito!";
+  }
+}
+
+@mixin d($device) {
+
+  @if $device == m {
+    @media (max-width: 400px) {
+      @content;
+    }
+  } @else if $device == t {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $device == s {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+p {
+  color: $primary-color;
+  background: $secundary-color;
+  @include type-primary(16);
+}
 
 section {
   max-width: 600px;
@@ -56,6 +108,9 @@ section {
 }
 
 .modal {
+  @include d(1000) {
+    @include type-primary(48);
+  }
   @include box-shadow(
     10px 10px 0 0 rgba(0, 0, 0, 0.5),
     15px 15px 0 0 rgba(0, 0, 0, 0.5),
@@ -78,7 +133,6 @@ section {
   $gutter: 23px;
 
   p {
-    background-color: #333 + #777;
     font-size: 10px - 6 * $gutter;
     width: 100px + 50 - $gutter;
     font-family: $font-primaria;
@@ -88,9 +142,14 @@ section {
   }
 
   a {
+    $padding: 20px;
+    @if 40px > $padding {
+      padding: 40px - $padding;
+    } @else {
+      $padding: 50px;
+    }
     display: block;
     max-width: 120px;
-    padding: 10px;
     border-radius: 4px;
     text-align: center;
     background: $cor-primaria;
