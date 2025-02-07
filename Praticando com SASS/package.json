@@ -4,8 +4,8 @@
   "description": "",
 "scripts": {
   "sass:g": "node_modules/sass/sass.js",
-  "sass": "sass src/styles/style.scss dist/style.css",
-  "sass:watch": "sass --watch src/styles/style.scss:dist/style.css"
+  "sass": "sass css/scss/style.scss css/style.css",
+  "sass:watch": "sass --watch css/scss/style.scss:css/style.css"
 },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,12 @@
+@use '_variaveis-e-mixins';
+
+// Gerais
+@use '_reset' as *;
+@use '_grid';
+@use '_geral';
+
+// Páginas
+@use '_sobre';
+@use '_produtos';
+@use '_portfolio';
+@use '_contato';

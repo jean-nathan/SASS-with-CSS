@@ -1,7 +1,0 @@
-$list: fc, twt, snap, ist;
-
-@each $item in $list {
-  .rede-#{$item} {
-    background: url('img/#{$item}.png');
-  }
-}
