@@ -1,4 +1,8 @@
 @charset "UTF-8";
+div {
+  width: 38%;
+}
+
 p {
   color: yellow;
   background: purple;
@@ -32,11 +36,14 @@ section {
   max-width: 120px;
   border-radius: 4px;
   text-align: center;
-  background: blue;
+  background: #0000ff;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-family: monospace;
+}
+.modal a:hover {
+  background: 255;
 }
 
 ul {
@@ -45,6 +52,7 @@ ul {
 ul li {
   display: inline-block;
   list-style: none;
+  font-size: 2.4em;
 }
 ul li a {
   display: block;

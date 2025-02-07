@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:map";
+@use "sass:color";
 
 @mixin color-template {
   background-color: rgb(118, 146, 247);
@@ -46,7 +47,7 @@
   }
 }
 
-$cor-primaria: blue;
+$cor-primaria: #0000ff;
 $font-primaria: monospace;
 $gutter: 10px;
 $fontDefault: 100px;
@@ -93,6 +94,22 @@ $secundary-color: gray;
       @content;
     }
   }
+}
+
+@mixin largeRoundValue($value) {
+  $valueForm: round($value / 12);
+} 
+
+@function em($pixels, $context: 10) {
+  @return ($pixels / $context) * 1em;
+}
+
+@function grid($colunas, $total: 16) {
+  @return round(($colunas / $total) * 100%);
+}
+
+div {
+  width: grid(6);
 }
 
 p {
@@ -157,6 +174,9 @@ section {
     text-decoration: none;
     text-transform: uppercase;
     font-family: $font-primaria;
+    &:hover {
+       background: blue($cor-primaria);
+    }
   }
 }
 
@@ -165,7 +185,7 @@ ul {
   li {
     display: inline-block;
     list-style: none;
-
+    font-size: em(24);
     a {
       display: block;
       padding: 20px;
