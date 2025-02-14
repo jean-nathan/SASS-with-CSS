@@ -1,0 +1,64 @@
+// Variables of grid
+$cols: 12;
+$gutter: 20;
+$l-device: 1200px;
+$m-device: 760px;
+$s-device: 480px;
+
+// box-sizing
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// Mixin de media-querie
+@mixin d($size) {
+  @if $size == l {
+    @media screen and (min-width: $l-device) {
+      @content;
+    }
+  } @else if $size == m {
+    @media screen and (min-width: ($m-device)) and (max-width: ($l-device - 1)) {
+      @content;
+    }
+  } @else if $size == s {
+    @media screen and (max-width: ($m-device - 1)) {
+      @content;
+    }
+  }
+}
+
+div {
+  @include d(s) {
+    background: green;
+  }
+}
+
+// Funcao do grid
+
+  @function grid($col, $offset: false) {
+    $divisao: calc($col / $cols);
+    $width: $divisao * 100;
+    @debug $width;
+    $result: calc($width - $gutter);
+  
+    // Se houver offset, ajustar o gutter
+    @if $offset == offset {
+      @warn "ENtrou";
+      $gutter: calc($gutter / 2);
+      $result: $width + $gutter;
+    }
+  
+    // Retornar o valor com a unidade percentual
+    @return #{$result+"%"};
+  }
+  
+
+// Gere as classes de grid
+
+p {
+  width: grid(2, offset);
+  border: 1px solid red;
+  display: block;
+}
