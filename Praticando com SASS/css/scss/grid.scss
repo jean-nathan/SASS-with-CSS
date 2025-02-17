@@ -34,7 +34,6 @@ div {
     background: green;
   }
 }
-
 // Funcao do grid
 
   @function grid($col, $offset: false) {
@@ -45,7 +44,6 @@ div {
   
     // Se houver offset, ajustar o gutter
     @if $offset == offset {
-      @warn "ENtrou";
       $gutter: calc($gutter / 2);
       $result: $width + $gutter;
     }
@@ -54,11 +52,73 @@ div {
     @return #{$result+"%"};
   }
   
-
 // Gere as classes de grid
 
-p {
-  width: grid(2, offset);
-  border: 1px solid red;
-  display: block;
+@for $i from 1 through $cols {
+  .grid-#{$i} {
+    width: grid($i);
+  }
 }
+
+// Mixin estrutura do grid
+
+@mixin grid-structure {
+  float: left;
+  min-height: 1px;
+  margin-left: calc($gutter / 2);
+  margin-right: calc($gutter / 2);
+  @include d(s) {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+[class^="grid-"] {
+  @include grid-structure();
+}
+
+// Gere as classes de offset
+
+@for $i from 1 through $cols {
+  .offset-#{$i} {
+    margin: grid($i, offset);
+    @extend %offset;
+  }
+}
+
+@include d(s) {
+  %offset {
+    margin-left: 0px;
+  }
+}
+
+@mixin clearflix {
+  &::after, &::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin container {
+  max-width: $l-device;
+  margin: 0px auto;
+  position: relative;
+  @include d(m) {
+    max-width: $m-device;
+  }
+  @include d(s) {
+    max-width: $s-device;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @include clearflix;
+}
+
+
+.container {
+  @include container;
+}
+
