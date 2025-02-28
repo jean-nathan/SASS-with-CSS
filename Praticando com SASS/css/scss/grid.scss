@@ -57,6 +57,7 @@ div {
 @for $i from 1 through $cols {
   .grid-#{$i} {
     width: grid($i);
+    display: inline-block;
   }
 }
 
@@ -77,6 +78,7 @@ div {
 
 [class^="grid-"] {
   @include grid-structure();
+  min-height: 50px !important;
 }
 
 // Gere as classes de offset
@@ -111,8 +113,8 @@ div {
   }
   @include d(s) {
     max-width: $s-device;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   @include clearflix;
 }
@@ -121,4 +123,3 @@ div {
 .container {
   @include container;
 }
-

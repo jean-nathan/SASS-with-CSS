@@ -1,3 +1,57 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 *,
 *::after,
 *::before {
@@ -12,50 +66,62 @@
 
 .grid-1 {
   width: -11.6666666667%;
+  display: inline-block;
 }
 
 .grid-2 {
   width: -3.3333333333%;
+  display: inline-block;
 }
 
 .grid-3 {
   width: 5%;
+  display: inline-block;
 }
 
 .grid-4 {
   width: 13.3333333333%;
+  display: inline-block;
 }
 
 .grid-5 {
   width: 21.6666666667%;
+  display: inline-block;
 }
 
 .grid-6 {
   width: 30%;
+  display: inline-block;
 }
 
 .grid-7 {
   width: 38.3333333333%;
+  display: inline-block;
 }
 
 .grid-8 {
   width: 46.6666666667%;
+  display: inline-block;
 }
 
 .grid-9 {
   width: 55%;
+  display: inline-block;
 }
 
 .grid-10 {
   width: 63.3333333333%;
+  display: inline-block;
 }
 
 .grid-11 {
   width: 71.6666666667%;
+  display: inline-block;
 }
 
 .grid-12 {
   width: 80%;
+  display: inline-block;
 }
 
 [class^=grid-] {
@@ -63,6 +129,7 @@
   min-height: 1px;
   margin-left: 10;
   margin-right: 10;
+  min-height: 50px !important;
 }
 @media screen and (max-width: 759px) {
   [class^=grid-] {
@@ -139,14 +206,45 @@
 @media screen and (max-width: 759px) {
   .container {
     max-width: 480px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .container::after, .container::before {
   content: "";
   display: table;
   clear: both;
+}
+
+body {
+  background: #edece4;
+  border: 10px solid #cbc6b9;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.titulo {
+  font-family: "PT Mono", monospace;
+  font-size: 1.125em;
+  line-height: 1.6666666667em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 759px) {
+  .titulo {
+    margin-bottom: 40px;
+  }
+}
+.titulo::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 2px;
+  background: #2a2426;
+  float: right;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
